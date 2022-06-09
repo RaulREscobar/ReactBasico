@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
+import './App.css';
 import Componente from './components/Componente';
 import Propiedades from './components/Propiedades';
 import Estado from './components/Estado';
 import RenderizadoCondicional from './components/RenderizadoCondicional';
 import RenderizadoElementos from './components/RenderizadoElementos';
+import Eventos from './components/Eventos';
 
-import './App.css';
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
           <RenderizadoCondicional />
           <hr />
           <RenderizadoElementos />
+          <hr />
+          <Eventos />
         </section>
 
       </header>
