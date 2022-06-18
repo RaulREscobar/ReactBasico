@@ -42,7 +42,7 @@ export class EventosES6 extends Component {
 }
 
 
-/* Propierrties Initializer */
+/* Propierties Initializer */
 
 export class EventosES7 extends Component {
     state = {
