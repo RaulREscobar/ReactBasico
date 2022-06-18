@@ -70,6 +70,8 @@ function App() {
           <hr />
           <RelojHook />
           <hr />
+          
+          <hr />
         </section>
 
       </header>
