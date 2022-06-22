@@ -118,7 +118,7 @@ export default function Formularios() {
 
 
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         alert("El formnulario se envio");
     }
@@ -201,6 +201,8 @@ export default function Formularios() {
                     id="terminos"
                     onChange={handleCheked}
                 />
+                <br />
+                <br />
                 <input type="submit" />
             </form>
         </>
