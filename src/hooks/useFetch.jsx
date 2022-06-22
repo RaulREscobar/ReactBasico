@@ -13,7 +13,7 @@ export const useFetch = (url) => {
                     throw {
                         err: true,
                         status: res.status,
-                        statusText: !res.statusText ? "Ocurrio un error" : res.statusText
+                        statusText: !res.statusText ? "Ocurrio un error" : res.statusText,
                     };
                 }
 
