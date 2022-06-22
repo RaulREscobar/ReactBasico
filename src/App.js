@@ -16,6 +16,7 @@ import RelojHook from './components/RelojHooks';
 import AjaxHooks from './components/AjaxHooks';
 import HooksPersonalizados from './components/HookPersonalizados';
 import Referencias from './components/Referancias';
+import Formularios from './components/Formularios';
 
 function App() {
   return (
@@ -79,6 +80,16 @@ function App() {
           <hr />
           <Referencias />
           <hr/>
+          <Formularios />
+          <hr />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </section>
 
       </header>
