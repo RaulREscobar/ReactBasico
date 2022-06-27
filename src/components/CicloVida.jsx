@@ -10,9 +10,7 @@ class Reloj extends Component {
     }
 
     render(){
-        return(
-            <h3>{this.props.hora}</h3>
-        )
+        return <h3>{this.props.hora}</h3>
     }
         
 }
@@ -26,7 +24,7 @@ export default class CicloVida extends Component {
             hora: new Date().toLocaleTimeString(),
             visible: false,
         }
-        this.temporizador = null
+        this.temporizador = null;
     }
 
     componentDidMount() {
@@ -42,7 +40,7 @@ export default class CicloVida extends Component {
     tictac = () => {
         this.temporizador = setInterval(() => {
             this.setState({
-                hora: new Date().toLocaleTimeString()
+                hora: new Date().toLocaleTimeString(),
             });
         }, 1000);
     }
@@ -50,26 +48,26 @@ export default class CicloVida extends Component {
     iniciar = () => {
         this.tictac();
         this.setState({
-            visible: true
+            visible: true,
         })
     }
 
     detetner = () => {
         clearInterval(this.temporizador)
         this.setState({
-            visible: false
-        })
-    }
+            visible: false,
+        });
+    };
 
     render() {
         //console.log(4, "El componente se dibuja o redibuja por algun cambio en el DOM");
         return (
-            <div>
+            <>
                 <h1>Ciclo de vida de un componente de clase</h1>
                 {this.state.visible && <Reloj hora={this.state.hora}/>}
                 <button onClick={this.iniciar}>iniciar</button>
                 <button onClick={this.detetner}>detetner</button>
-            </div>
+            </>
         )
     }
 } 

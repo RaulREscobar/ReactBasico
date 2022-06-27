@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+function Pokemon({ avatar, name }) {
+    return (
+        <figure>
+            <img src={avatar} alt={name} />
+            <figcaption>{name}</figcaption>
+        </figure>
+    );
+}
+
 export default function AjaxHooks() {
     const [pokemons, setPokemons] = useState([]);
 
@@ -46,27 +55,19 @@ export default function AjaxHooks() {
         getPokemons("https://pokeapi.co/api/v2/pokemon/");
     }, [])
 
-    function Pokemon({ avatar, name }) {
-        return (
-            <figure>
-                <img src={avatar} alt={name} />
-                <figcaption>{name}</figcaption>
-            </figure>
-        )
-    }
-
     return (
         <>
             <h3> Peticiones Asíncronicas en Hooks</h3>
-            {pokemons.length === 0 ?
+            {pokemons.length === 0 ? (
                 <h3>Cargando...</h3>
-                :
-                pokemons.map(element => (
+            ) : (
+                pokemons.map((element) => (
                     <Pokemon
                         key={element.id}
                         name={element.name}
                         avatar={element.avatar}
-                    />))}
+                    />))
+            )}
         </>
-    )
+    );
 }

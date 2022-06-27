@@ -22,16 +22,14 @@ export const useFetch = (url) => {
                 setIsPending(false);
                 setData(data);
                 setError({ err: false });
-
             } catch (err) {
                 setIsPending(true);
-                setError(err)
+                setError(err);
             }
         };
+
         getData(url);
+    }, [url]);
 
-    }, [url])
-
-    return { data, isPending, error }
-
-}
+    return { data, isPending, error };
+};
