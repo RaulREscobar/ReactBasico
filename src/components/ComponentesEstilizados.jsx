@@ -1,15 +1,15 @@
 import React from 'react';
-import styled, {css, keyframes, ThemeProvider, createGlobalStyle} from 'styled-components';
+import styled, { css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components';
 
 
-export default function ComponentesEstilizados(){
+export default function ComponentesEstilizados() {
     let mainColor = "#db7093",
-    mainAlphaColor = "#db709380";
+        mainAlphaColor = "#db709380";
 
 
 
     const setTransitionTime = (time) => `all ${time} ease-in-out`;
-    
+
     const fadeIn = keyframes`
     0% {
         opacity: 0;
@@ -17,18 +17,18 @@ export default function ComponentesEstilizados(){
     100% {
         opacity:1;
     }`;
-    
+
     const MyH3 = styled.h3`
     padding: 2rem;
     text-align: center;
     color: ${(props) => props.color};
-    color: ${({color}) => color};
-    color: ${({color}) => color || '#000'};
+    color: ${({ color }) => color};
+    color: ${({ color }) => color || '#000'};
     background-color: ${mainColor};
     transition: ${setTransitionTime('1s')};
     animation: ${fadeIn} 1s ease-out;
 
-    ${({isButton}) => isButton && css`
+    ${({ isButton }) => isButton && css`
         margin: auto;
         max-width: 50%;
         border-radius: 0.25rem;
@@ -42,18 +42,18 @@ export default function ComponentesEstilizados(){
 
     const ligth = {
         color: "#222",
-        bgColor : "#DDD",
+        bgColor: "#DDD",
     }
     const dark = {
         color: "#DDD",
-        bgColor : "#222",
+        bgColor: "#222",
     }
 
     const Box = styled.div`
     padding: 1rem;
     margin: 1rem;
-    color: ${({theme})=> theme.color};
-    background-color: ${({theme})=> theme.bgColor};
+    color: ${({ theme }) => theme.color};
+    background-color: ${({ theme }) => theme.bgColor};
     `;
 
     const BoxRound = styled(Box)`
@@ -67,21 +67,21 @@ export default function ComponentesEstilizados(){
         text-transform: uppercase;
     }`
 
-    return(
+    return (
         <>
-        <GlobalStyle />
-        <h2>Styled Components</h2>
-        <MyH3>Hola soy un H3 Estilizado con styled components</MyH3>
-        <MyH3 color='#61dafb'>Hola soy un H3 Estilizado con styled components</MyH3>
-        <MyH3 isButton> Soy un H3 estilizado como boton</MyH3>
-        <ThemeProvider theme={ligth}>
-          <Box> Soy una caja LIGHT</Box>
-          <BoxRound> Soy una caja redondeada LIGHT</BoxRound>
-        </ThemeProvider>
-        <ThemeProvider theme={dark}>
-          <Box> Soy una caja DARK</Box>
-          <BoxRound> Soy una caja redondeada DARK</BoxRound>
-        </ThemeProvider>
+            <GlobalStyle />
+            <h2>Styled Components</h2>
+            <MyH3>Hola soy un H3 Estilizado con styled components</MyH3>
+            <MyH3 color='#61dafb'>Hola soy un H3 Estilizado con styled components</MyH3>
+            <MyH3 isButton> Soy un H3 estilizado como boton</MyH3>
+            <ThemeProvider theme={ligth}>
+                <Box> Soy una caja LIGHT</Box>
+                <BoxRound> Soy una caja redondeada LIGHT</BoxRound>
+            </ThemeProvider>
+            <ThemeProvider theme={dark}>
+                <Box> Soy una caja DARK</Box>
+                <BoxRound> Soy una caja redondeada DARK</BoxRound>
+            </ThemeProvider>
         </>
     );
 }
